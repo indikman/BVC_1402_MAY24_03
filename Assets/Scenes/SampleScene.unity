@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform
       objectReference: {fileID: 0}
+    - target: {fileID: 1176251409350967648, guid: 4a85e038cf78e274fb9d35c6217fb14a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1176251409350967650, guid: 4a85e038cf78e274fb9d35c6217fb14a, type: 3}
       propertyPath: m_UsedByEffector
       value: 1
@@ -730,10 +734,10 @@ GameObject:
   - component: {fileID: 1035161238}
   - component: {fileID: 1035161237}
   - component: {fileID: 1035161236}
+  - component: {fileID: 1035161245}
   - component: {fileID: 1035161240}
   - component: {fileID: 1035161243}
-  - component: {fileID: 1035161244}
-  - component: {fileID: 1035161245}
+  - component: {fileID: 1035161246}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -899,26 +903,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1035161235}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58e1aa684542f1744ae46dae223b4283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   showDebug: 0
---- !u!114 &1035161244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1035161235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95501e5f1a27c084283440c2a0a8c9ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpVelocity: 10
-  speed: 5
 --- !u!96 &1035161245
 TrailRenderer:
   serializedVersion: 3
@@ -961,7 +951,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.5
+  m_Time: 3
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -971,7 +961,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.61334515
+        value: 0.36592388
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1032,6 +1022,23 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &1035161246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035161235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbd6a76e51d3f4f678f94249c55b4ae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpVelocity: 10
+  speed: 5
+  fallMultiplier: 5
+  lowJumpMultiplier: 4
+  coyoteTime: 0.3
 --- !u!1 &1314213500 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4105544483741226389, guid: c9a526fa6d9f8024f8d53d921bf922b5, type: 3}
@@ -1233,6 +1240,10 @@ PrefabInstance:
     - target: {fileID: 1176251409350967648, guid: 4a85e038cf78e274fb9d35c6217fb14a, type: 3}
       propertyPath: m_Name
       value: Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 1176251409350967648, guid: 4a85e038cf78e274fb9d35c6217fb14a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1176251409350967650, guid: 4a85e038cf78e274fb9d35c6217fb14a, type: 3}
       propertyPath: m_UsedByEffector

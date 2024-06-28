@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerInputController : MonoBehaviour
 {
@@ -16,7 +18,41 @@ public class PlayerInputController : MonoBehaviour
 	{
 		playerController = GetComponent<PlayerController>();
 	}
-	void OnEnable()
+
+	private void OnEnable()
+	{
+		PlayerInputs playerInputs = new PlayerInputs();
+
+		// Jump press and release
+		playerInputs.PlayerActions.Jump.performed += OnJumpPressed;
+		playerInputs.PlayerActions.Jump.canceled += OnJumpReleased;
+		
+		// Move
+		playerInputs.PlayerMovement.Move.performed += OnMovePerformed;
+		
+		playerInputs.Enable();
+	}
+
+	private void OnMovePerformed(InputAction.CallbackContext context)
+	{
+		Vector2 movementValues = context.ReadValue<Vector2>();
+		playerController.Move(movementValues);
+	}
+
+	private void OnJumpPressed(InputAction.CallbackContext context)
+	{
+		playerController.HandleJump();
+	}
+	
+	private void OnJumpReleased(InputAction.CallbackContext context)
+	{
+		playerController.JumpReleased();
+	}
+	
+	
+
+
+	/*void OnEnable()
 	{
 		PlayerInputs playerInputs = new PlayerInputs();
 		if(playerInputs != null)
@@ -27,5 +63,6 @@ public class PlayerInputController : MonoBehaviour
 		}
 		playerInputs.Enable();
 		
-	}
+	}*/
+	
 }
