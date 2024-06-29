@@ -33,7 +33,6 @@ public class SceneLoader : MonoBehaviour
         
         // load the new scene
         SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
         _currentScene = sceneName;
         
         // Listen to the scene load
@@ -41,9 +40,13 @@ public class SceneLoader : MonoBehaviour
     }
 
     // This method will execute everytime a new scene is completed its loading process.
-    private void OnNewSceneLoaded(Scene scene, LoadSceneMode mode)
+    private void OnNewSceneLoaded(Scene sceneName, LoadSceneMode mode)
     {
+        SceneManager.SetActiveScene(sceneName);
+        
         // Hide the splash screen
         splashScreen.SetActive(false);
+        
+        SceneManager.sceneLoaded -= OnNewSceneLoaded;
     }
 }
